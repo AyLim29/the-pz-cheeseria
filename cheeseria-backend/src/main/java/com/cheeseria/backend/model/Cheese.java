@@ -27,7 +27,7 @@ public class Cheese {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    @Column(name="pricePerKilo")
     private double pricePerKilo;
     private String colour;
+    private String imageURL;
 }
