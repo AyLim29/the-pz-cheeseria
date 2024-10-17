@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { Button, Container, Form, FormGroup, Input, Label, Offcanvas, OffcanvasHeader, OffcanvasBody} from 'reactstrap';
+import { Button, Form, Input, Offcanvas, OffcanvasHeader, OffcanvasBody} from 'reactstrap';
 
 import './App.css';
 
@@ -30,7 +30,8 @@ const App = () => {
 
   return (
     <div className="App">
-      <Offcanvas
+      <Offcanvas 
+        data-testid="Offcanvas-calculator"
         isOpen={showCalculator}
         direction="end"
         fade={false}
@@ -91,8 +92,7 @@ const App = () => {
                         handleCheeseButton(cheese);
                       }
                     }
-                  >
-                    Calculate Price
+                  >Calculate Price
                   </Button>
                 </div>
                 </td>
