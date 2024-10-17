@@ -22,7 +22,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    fetch('/api/getAllCheeses')
+    fetch('http://localhost:8080/api/getAllCheeses')
       .then(response => response.json())
       .then(data => setCheeses(data))
       .catch(error => console.error('Error fetching cheeses:', error));

@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  backend:
+    image: cheeseria-backend
+    build:
+      context: ./cheeseria-backend
+    ports:
+      - "8080:8080"
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:h2:mem:cheeseria_db
+    networks:
+      - cheeseria-network
+
+  frontend:
+    image: cheeseria-frontend
+    build:
+      context: ./cheeseria-frontend
+    ports:
+      - "3000:80" # React runs on port 3000
+    depends_on:
+      - backend
+    networks:
+      - cheeseria-network
+
+networks:
+  cheeseria-network:
+    driver: bridge
