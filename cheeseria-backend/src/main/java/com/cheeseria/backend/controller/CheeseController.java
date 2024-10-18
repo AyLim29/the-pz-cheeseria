@@ -20,6 +20,9 @@ import java.util.List;
 import java.util.Optional;
 import java.util.ArrayList;
 
+//TODO: With more time, I would refactor cheeseController.java into cheeseService.java to handle the logic
+//TODO: With more time, I would improve the error handling, covering more edge cases
+
 @CrossOrigin(origins = "http://localhost:3000", maxAge= 3600)
 @RestController
 @RequestMapping("/api")
@@ -38,6 +41,7 @@ public class CheeseController {
             }
 
             return new ResponseEntity<>(cheeseList, HttpStatus.OK);
+
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -52,6 +56,7 @@ public class CheeseController {
             }
     
             return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+
         } catch (Exception e) {
             return new ResponseEntity<>(HttpStatus.INTERNAL_SERVER_ERROR);
         }
@@ -77,6 +82,7 @@ public class CheeseController {
                 updatedCheeseData.setName(newCheeseData.getName());
                 updatedCheeseData.setColour(newCheeseData.getColour());
                 updatedCheeseData.setPricePerKilo(newCheeseData.getPricePerKilo());
+                updatedCheeseData.setImageURL(newCheeseData.getImageURL());
 
                 Cheese cheeseObj = cheeseRepository.save(updatedCheeseData);
                 return new ResponseEntity<>(cheeseObj, HttpStatus.OK);

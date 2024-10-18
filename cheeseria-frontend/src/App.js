@@ -3,6 +3,7 @@ import { Button, Form, Input, Offcanvas, OffcanvasHeader, OffcanvasBody} from 'r
 
 import './App.css';
 
+// TODO: With more time, I would refactor app.js into multiple components for better organization and maintainability.
 const App = () => {
   const [cheeses, setCheeses] = useState([]);
   const [selectedCheese, setSelectedCheese] = useState(null);

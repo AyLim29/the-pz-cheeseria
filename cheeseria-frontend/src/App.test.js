@@ -28,6 +28,7 @@ test('renders all cheeses in a table with respective details and buttons', () =>
 
   const cheeseRows = screen.getAllByRole('row').filter(row => row.parentElement.tagName !== 'THEAD');
 
+  // Check that the cheese's attributes are being displayed properly
   cheeseRows.forEach((row, index) => {
     const cheese = cheeses[index];
 
@@ -40,7 +41,7 @@ test('renders all cheeses in a table with respective details and buttons', () =>
   });
 });
 
-test('opens offcanvas on button click', async () => {
+test('button opens offcanvas on button click', async () => {
   render(<App />);
   // Wait for all the cheeses to be fetched
   await waitFor(() => expect(screen.getByText('Cabrales')).toBeInTheDocument());
@@ -52,8 +53,10 @@ test('opens offcanvas on button click', async () => {
 test('calculates correct price based on input weight', async () => {
   render(<App />);
 
+  // Wait for all the cheeses to be fetched
   await waitFor(() => expect(screen.getByText('Cabrales')).toBeInTheDocument());
 
+  // Enter the price calculator
   const button = screen.getAllByRole('button', { name: 'Calculate Price' })[0];
   fireEvent.click(button);
 
@@ -64,4 +67,4 @@ test('calculates correct price based on input weight', async () => {
   expect(screen.getByText('Price: $' +  calculatedPrice.toFixed(2).toString())).toBeInTheDocument();
 });
 
-//TODO: Add more rigorous testing on offcanvas functionality
+//TODO: With more time, I would add more rigorous testing to ensure reliability

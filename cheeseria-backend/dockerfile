@@ -25,3 +25,5 @@ EXPOSE 8080
 
 # Command to run the application
 CMD ["java", "-jar", "app.jar"]
+
+#TODO: With more time, I would try and optimize the docker setup to reduce the final image size

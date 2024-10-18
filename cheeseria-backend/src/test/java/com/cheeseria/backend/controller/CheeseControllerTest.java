@@ -39,6 +39,8 @@ public class CheeseControllerTest {
 		.pricePerKilo(9999.0).imageURL("https://upload.wikimedia.org/wikipedia/commons/1/1c/Single_wrapped_slice_of_processed_cheese.jpg").build());
     }
 
+    // Tests that the API is working correctly
+
     @Test
     public void testAddCheese() throws Exception{
 		mockMvc.perform(post("/api/addCheese")
@@ -82,9 +84,11 @@ public class CheeseControllerTest {
     @Test
     public void testDeleteCheeseById() throws Exception {
         doNothing().when(cheeseRepository).deleteById(6L);
+        when(cheeseRepository.existsById(6L)).thenReturn(true);
 		mockMvc.perform(delete("/api/deleteCheeseById/{id}", 6L)
             .contentType(MediaType.APPLICATION_JSON))
             .andExpect(status().isOk());
     }
 
+    //TODO: With more time, I would add more rigorous testing to ensure reliability
 }
