@@ -2,6 +2,13 @@ The PZ Cheeseria Proof of Concept
 ============================
 > Minimim viable product that displays The PZ Cheeseria's cheese selection
 
+![](/images/PZ_C_POC1.PNG#center)
+<center>5 cheeses being displayed </center>
+<br/>
+
+![](/images/PZ_C_POC2.PNG#center)
+<center>Price calculator for cheese weight </center>
+
 ### File Strucutre
     .
     ├── cheeseria-backend                                           # The back-end of the App, using spring boot       
@@ -27,7 +34,8 @@ The PZ Cheeseria Proof of Concept
     │   │           └── CheeseRepositoryTest.java
     │   ├── dockerfile        
     │   ├── ...
-    │   └── pom.xml                
+    │   └── pom.xml      
+    │                 
     ├── cheeseria-frontend                                          # The front-end of the App, using React 
     │   ├── .docker          
     │   │   └── nginx.conf                                          
@@ -42,6 +50,7 @@ The PZ Cheeseria Proof of Concept
     │   ├── dockerfile
     │   ├── package-lock.json
     │   └── package.json
+    │
     ├── docker-compose.yml
     └── README.md
 
