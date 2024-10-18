@@ -2,12 +2,19 @@ The PZ Cheeseria Proof of Concept
 ============================
 > Minimim viable product that displays The PZ Cheeseria's cheese selection
 
-![](/images/PZ_C_POC1.PNG#center)
-<center>5 cheeses being displayed </center>
+<figure>
+  <img
+  src="/images/PZ_C_POC1.PNG">
+  <center><figcaption>5 cheeses being displayed</figcaption></center>
+</figure>
 <br/>
+<figure>
+  <img
+  src="/images/PZ_C_POC2.PNG">
+  <center><figcaption>Price calculator for cheese weight</figcaption></center>
+</figure>
 
-![](/images/PZ_C_POC2.PNG#center)
-<center>Price calculator for cheese weight </center>
+---
 
 ### File Strucutre
     .
